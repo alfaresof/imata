@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "882619993158",
+    "project_id": "imata-app",
+    "storage_bucket": "imata-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:882619993158:android:76dc57923e425ee0550e47",
+        "android_client_info": {
+          "package_name": "com.example.imata"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "882619993158-2nv226kobtm8rspefcofd3l0gmg7ut98.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYJaXQhWJZoEoA4CxLbGDZosAk1O6N9_I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "882619993158-2nv226kobtm8rspefcofd3l0gmg7ut98.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
