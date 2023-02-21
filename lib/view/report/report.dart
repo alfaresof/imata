@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:imata/comp/colors.dart';
+import 'package:imata/comp/dialog.dart';
 import 'package:imata/comp/text.dart';
 
 class Report extends StatelessWidget {
@@ -15,28 +16,41 @@ class Report extends StatelessWidget {
     return Container(
       child: Scaffold(
         appBar: AppBar(
-          title: text('Explore',30,FontWeight.bold , Colors.black87),
+          title: text('Explore',30,FontWeight.bold , Colors.black87,TextAlign.center),
           backgroundColor: Colors.white,
           elevation: 0,
         ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),
-          child: Center(
-            child: Column(
+          child: Column(
 
-              children: <Widget>[
-                text('report', 20, FontWeight.normal, Colors.black87),
-                Stack(
-                  children: [
-                    Container(
-                      width: width/1.2,
-                      height: height/1.45,
-                      alignment: Alignment.bottomCenter,
-                      decoration: BoxDecoration(
-                          color: lightGreen,
-                          borderRadius: BorderRadius.circular(20)
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: text('report', 25, FontWeight.normal, Colors.black87,TextAlign.left),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Center(
+                child: Container(
+                  width: width/1.2,
+                  height: height/1.45,
+                  alignment: Alignment.bottomCenter,
+                  decoration: BoxDecoration(
+                      color: lightGreen,
+                      borderRadius: BorderRadius.circular(20)
+                  ),
+                  child: Stack(
+
+                    children: [
+                      Center(child: Image.asset('assets/3d_hand.png')),
+                      Padding(
+                        padding:  EdgeInsets.only(top: height/8,left: width/3.5),
+                        child: Image.asset('assets/rubbish.png'),
                       ),
-                      child: ClipRect(
+                      ClipRect(
                         clipBehavior: Clip.hardEdge,
                         child: OverflowBox(
                           child: Column(
@@ -44,31 +58,44 @@ class Report extends StatelessWidget {
                             children: <Widget>[
                               Container(
                                 width: width/1,
-                                height: height/7,
+                                height: height/6.3,
                                 decoration: BoxDecoration(
-                                    color: Colors.black87.withOpacity(0.4),
+                                    color: darkGrey.withOpacity(0.6),
                                     borderRadius: BorderRadius.only(
                                         bottomLeft: Radius.circular(20),
                                         bottomRight: Radius.circular(20)
                                     )
                                 ),
-                                // color: Colors.black.withOpacity(0.5),
+                                child: Column(
+
+                                  children: <Widget>[
+                                    text('Help us spot the plump trash by scanning it!',20,FontWeight.normal , Colors.white,TextAlign.center),
+                                    SizedBox(height: 10,),
+                                    ElevatedButton(
+                                      style: ElevatedButton.styleFrom(
+
+                                        backgroundColor: darkGreen,
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(20),
+                                        ),
+                                        padding: EdgeInsets.fromLTRB(60, 10, 60, 10),
+                                      ),
+                                      child: text('try it !',20,FontWeight.bold,Colors.white,TextAlign.center),
+                                      onPressed: () => dialogBuilder(context),
+                                    )
+                                  ],
+                                ),
+
                               )
                             ],
                           ),
                         ),
                       ),
-                    ),
-                    Column(
-                      children: <Widget>[
-                        // text()
-                      ],
-                    ),
-                  ],
+                    ]
+                  ),
                 ),
-
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
