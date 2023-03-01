@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:imata/view/register/register.dart';
 
 Future<void> dialogBuilder(BuildContext context) {
   return showDialog<void>(
@@ -14,11 +15,9 @@ Future<void> dialogBuilder(BuildContext context) {
             ),
             child: const Text('sign up!'),
             onPressed: () {
-
-             Navigator.pushNamed(context, '/register');
+              Navigator.pushNamed(context, Register.routename);
             },
           ),
-
         ],
       );
     },
